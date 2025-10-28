@@ -1,6 +1,11 @@
+export type LocationCoordinates = {
+  latitude: number;
+  longitude: number;
+};
+
 export type Location = {
   name: string;
-  position: number[];
+  coordinates: LocationCoordinates;
   category: string;
   // walkingDistance: number;
   // price?: number;
