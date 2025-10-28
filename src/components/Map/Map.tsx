@@ -5,10 +5,10 @@ import "leaflet/dist/leaflet.css";
 import { Location } from "../../types/Location";
 import { LocationCategory } from "../../enums/LocationCategory";
 import {
-  blueMarketIcon,
-  greenMarketIcon,
+  blueMarkerIcon,
+  greenMarkerIcon,
   hotelLocation,
-  redMarketIcon,
+  redMarkerIcon,
 } from "../../constants";
 
 export default function Map() {
@@ -187,13 +187,13 @@ export default function Map() {
       center={hotelCoordinates}
       zoom={13}
       scrollWheelZoom={true}
-      style={{ height: "600px", width: "100%", borderRadius: "12px" }}
+      style={{ height: "90vh", width: "100%", borderRadius: "12px" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={hotelCoordinates} icon={greenMarketIcon}>
+      <Marker position={hotelCoordinates} icon={greenMarkerIcon}>
         <Popup>Hotel - La França Travellers</Popup>
       </Marker>
       {locations.map((location) => (
@@ -205,8 +205,8 @@ export default function Map() {
           ]}
           icon={
             location.category === LocationCategory.Food
-              ? blueMarketIcon
-              : redMarketIcon
+              ? blueMarkerIcon
+              : redMarkerIcon
           }
         >
           <Popup>
